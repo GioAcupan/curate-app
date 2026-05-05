@@ -11,7 +11,7 @@
 
 - No infinite scroll — brief and feed have hard end states
 - No streaks or broken-chain visuals — use "5 of 7" patterns
-- No red color anywhere — palette is greys, soft blues, off-whites
+- No red color used for negative/punishment states — incomplete goals use neutral styling (per MVP spec §2). Brand orange (#FF6D00 per DESIGN.md) is the primary accent and is used freely.
 - No item suggestions from the open web — user-approved sources only
 - No feed notifications — ever
 - No feed as default surface — always reached intentionally
