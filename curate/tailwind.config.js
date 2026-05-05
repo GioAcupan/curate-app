@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  presets: [require("nativewind/preset")],
   content: [
     "./App.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
@@ -64,6 +65,16 @@ module.exports = {
       },
       fontFamily: {
         sans: ["PlusJakartaSans", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        "heading-lg": [32, { lineHeight: 38.4, fontWeight: "700", letterSpacing: -0.02 }],
+        "heading-md": [24, { lineHeight: 31.2, fontWeight: "700", letterSpacing: -0.02 }],
+        "heading-sm": [20, { lineHeight: 28, fontWeight: "700", letterSpacing: -0.01 }],
+        "body-lg": [18, { lineHeight: 30.6, fontWeight: "400" }],
+        "body-md": [16, { lineHeight: 25.6, fontWeight: "400" }],
+        "body-sm": [14, { lineHeight: 21, fontWeight: "400" }],
+        caption: [12, { lineHeight: 16.8, fontWeight: "600", letterSpacing: 0.06 }],
+        overline: [11, { lineHeight: 14.3, fontWeight: "700", letterSpacing: 0.08 }],
       },
       borderRadius: {
         pill: "100px",
