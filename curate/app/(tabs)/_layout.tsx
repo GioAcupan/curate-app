@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import { Platform } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { BlurView } from "expo-blur";
 import { fluentGlass } from "../../src/lib/glass-styles";
 
 export default function TabLayout() {
@@ -49,15 +50,25 @@ export default function TabLayout() {
             left: 24,
             right: 24,
             height: 72,
-            backgroundColor: 'rgba(30,30,42,0.9)',
+            backgroundColor: 'transparent',
             borderWidth: 1,
             borderColor: 'rgba(255,255,255,0.1)',
             borderRadius: 100,
             paddingBottom: 0,
             borderTopWidth: 0,
             elevation: 0,
+            overflow: 'hidden',
           },
         }),
+        tabBarBackground: () =>
+          Platform.OS === "web" ? null : (
+            <BlurView
+              tint={fluentGlass.nativeTint}
+              intensity={fluentGlass.nativeBlurIntensity}
+              experimentalBlurMethod="dimezisBlurView"
+              style={{ flex: 1 }}
+            />
+          ),
         tabBarActiveTintColor: '#FF6D00',
         tabBarInactiveTintColor: 'rgba(240,239,244,0.35)',
       }}

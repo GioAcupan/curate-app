@@ -8,10 +8,11 @@ type Props = {
 };
 
 const HEADER_PADDING_TOP = 48;
-const HEADER_PADDING_BOTTOM = 24;
+const HEADER_PADDING_BOTTOM = 14;
 const HEADER_HORIZONTAL = 20;
+const HEADER_CONTENT_GAP = 16;
 export const GLASS_HEADER_HEIGHT =
-  HEADER_PADDING_TOP + 32 + HEADER_PADDING_BOTTOM;
+  HEADER_PADDING_TOP + 32 + HEADER_PADDING_BOTTOM + HEADER_CONTENT_GAP;
 
 export function GlassHeader({ title, rightElement }: Props) {
   const isWeb = Platform.OS === "web";
@@ -22,7 +23,6 @@ export function GlassHeader({ title, rightElement }: Props) {
         paddingTop: HEADER_PADDING_TOP,
         paddingBottom: HEADER_PADDING_BOTTOM,
         paddingHorizontal: HEADER_HORIZONTAL,
-        backgroundColor: fluentGlass.tint,
       }}
     >
       <View className="flex-row items-center justify-between">
