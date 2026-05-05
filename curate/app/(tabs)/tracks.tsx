@@ -9,7 +9,7 @@ import {
 import { router } from "expo-router";
 import { useTracks } from "../../src/hooks/useTracks";
 import { ScreenContainer } from "../../src/components/ScreenContainer";
-import { GlassHeader } from "../../src/components/GlassHeader";
+import { GlassHeader, GLASS_HEADER_HEIGHT } from "../../src/components/GlassHeader";
 import type { Track, TrackStatus } from "../../src/types";
 
 const STATUS_LABELS: Record<TrackStatus, string> = {
@@ -144,7 +144,7 @@ export default function TracksScreen() {
       />
       <ScrollView
         className="flex-1 px-5"
-        contentContainerStyle={{ paddingBottom: 100, paddingTop: 16 }}
+        contentContainerStyle={{ paddingBottom: 100, paddingTop: GLASS_HEADER_HEIGHT }}
       >
         {/* Empty state */}
         {tracks && tracks.length === 0 && (
