@@ -33,3 +33,7 @@ yarn-error.*
 
 # Windows
 Thumbs.db
+NUL
+
+# Playwright MCP runtime artifacts
+.playwright-mcp/
