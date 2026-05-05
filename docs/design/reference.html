@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gio Brand Design System — Hero Reference</title>
+  <meta name="description" content="Complete visual reference for the Gio Brand Design System: Blaze palette, Dawn gradients, glassmorphism, grain, and edge-lit cards.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hero.css">
+</head>
+<body>
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="mesh-bg" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav glass-fluent" id="mainNav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#">
+        <span class="nav-logo">G</span>
+        <span class="nav-wordmark">Gio Design</span>
+      </a>
+      <div class="nav-links">
+        <a href="#colors">Colors</a>
+        <a href="#typography">Type</a>
+        <a href="#surfaces">Surfaces</a>
+        <a href="#components">Components</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="badge badge-gradient">Design System v1.0</span>
+      <h1 class="hero-title">Build with<br><span class="gradient-text">Blaze & Glass</span></h1>
+      <p class="hero-subtitle">A premium glassmorphism design system. Warm Blaze orange, Dawn gradients, grain textures, and edge-lit surfaces — for every personal project.</p>
+      <div class="hero-actions">
+        <a href="#colors" class="btn btn-gradient">Explore System</a>
+        <a href="#components" class="btn btn-secondary">View Components</a>
+      </div>
+    </div>
+    <!-- Floating glass cards behind hero -->
+    <div class="hero-float hero-float-1 glass-liquid" aria-hidden="true">
+      <div class="glass-specular"></div>
+      <div class="hero-float-content">
+        <div class="hero-float-icon">🔥</div>
+        <span>Blaze</span>
+      </div>
+    </div>
+    <div class="hero-float hero-float-2 glass-default" aria-hidden="true">
+      <div class="hero-float-content">
+        <div class="hero-float-icon">✦</div>
+        <span>Glass</span>
+      </div>
+    </div>
+    <div class="hero-float hero-float-3 glass-fluent" aria-hidden="true">
+      <div class="hero-float-content">
+        <div class="hero-float-icon">◐</div>
+        <span>Dawn</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAWN GRADIENT BAR -->
+  <div class="dawn-bar" aria-hidden="true"></div>
+
+  <!-- COLORS -->
+  <section class="section" id="colors">
+    <div class="section-inner">
+      <span class="section-overline">Colors</span>
+      <h2 class="section-title">Blaze Palette</h2>
+      <p class="section-desc">A 10-shade orange scale. Vivid, electric, unmistakable.</p>
+
+      <div class="color-grid">
+        <div class="color-chip" style="--c:#FFF3E0;"><span class="chip-label dark-label">50</span></div>
+        <div class="color-chip" style="--c:#FFD9A8;"><span class="chip-label dark-label">100</span></div>
+        <div class="color-chip" style="--c:#FFB84D;"><span class="chip-label dark-label">200</span></div>
+        <div class="color-chip" style="--c:#FF9500;"><span class="chip-label">300</span></div>
+        <div class="color-chip" style="--c:#FF8200;"><span class="chip-label">400</span></div>
+        <div class="color-chip primary-chip" style="--c:#FF6D00;"><span class="chip-label">500 ★</span></div>
+        <div class="color-chip" style="--c:#E56200;"><span class="chip-label">600</span></div>
+        <div class="color-chip" style="--c:#BF5000;"><span class="chip-label">700</span></div>
+        <div class="color-chip" style="--c:#8C3A00;"><span class="chip-label">800</span></div>
+        <div class="color-chip" style="--c:#5C2600;"><span class="chip-label">900</span></div>
+      </div>
+
+      <!-- Gradient Showcase -->
+      <h3 class="subsection-title">Dawn Gradient</h3>
+      <div class="gradient-showcase">
+        <div class="gradient-bar" style="background:linear-gradient(135deg,#FBBF24,#F97316,#EC4899);">135°</div>
+        <div class="gradient-bar" style="background:linear-gradient(90deg,#FBBF24,#F97316,#EC4899);">90°</div>
+        <div class="gradient-bar" style="background:linear-gradient(180deg,#FBBF24,#F97316,#EC4899);">180°</div>
+      </div>
+
+      <!-- Signal Colors -->
+      <h3 class="subsection-title">Signal Colors</h3>
+      <div class="signal-row">
+        <div class="signal-chip" style="--c:#22C55E;"><span>Success</span></div>
+        <div class="signal-chip" style="--c:#FBBF24;"><span>Warning</span></div>
+        <div class="signal-chip" style="--c:#EF4444;"><span>Error</span></div>
+        <div class="signal-chip" style="--c:#3B82F6;"><span>Info</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="section" id="typography">
+    <div class="section-inner">
+      <span class="section-overline">Typography</span>
+      <h2 class="section-title">Plus Jakarta Sans</h2>
+      <p class="section-desc">One family, infinite versatility. From 72px display to 11px overline.</p>
+
+      <div class="type-showcase glass-default edge-top-highlight">
+        <p class="type-display-xl gradient-text">Aa</p>
+        <p class="type-display-lg">Display Large — 48px</p>
+        <h3 class="type-heading-lg">Heading Large — 32px Bold</h3>
+        <h4 class="type-heading-md">Heading Medium — 24px Bold</h4>
+        <h5 class="type-heading-sm">Heading Small — 20px Bold</h5>
+        <p class="type-body-lg">Body Large — 18px. The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+        <p class="type-body-md">Body Medium — 16px. The quick brown fox jumps over the lazy dog. How vexingly quick daft zebras jump.</p>
+        <p class="type-body-sm">Body Small — 14px. The five boxing wizards jump quickly at dawn. Sphinx of black quartz, judge my vow.</p>
+        <p class="type-caption">CAPTION — 12PX · SEMI-BOLD · TRACKING +0.06EM</p>
+        <p class="type-overline">OVERLINE — 11PX · BOLD · TRACKING +0.08EM</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SURFACES -->
+  <section class="section" id="surfaces">
+    <div class="section-inner">
+      <span class="section-overline">Surfaces</span>
+      <h2 class="section-title">Glass System</h2>
+      <p class="section-desc">Three glass recipes, two edge lighting styles. Glassmorphism as a material language.</p>
+
+      <div class="surface-grid">
+        <!-- Default -->
+        <div class="surface-card glass-default edge-top-highlight">
+          <span class="surface-label">polaris-glass-default</span>
+          <h3>Default Glass</h3>
+          <p>Standard frosted glass for primary content cards, dashboards, and panels.</p>
+          <div class="surface-meta">
+            <span class="badge badge-subtle">Blur 24px</span>
+            <span class="badge badge-subtle">Opacity 70%</span>
+          </div>
+        </div>
+
+        <!-- Liquid -->
+        <div class="surface-card glass-liquid">
+          <div class="glass-specular"></div>
+          <div class="glass-content">
+            <span class="surface-label">polaris-glass-liquid</span>
+            <h3>Liquid Glass</h3>
+            <p>iOS-style thin refractive glass with specular streak. For modals and floating elements.</p>
+            <div class="surface-meta">
+              <span class="badge badge-subtle">Blur 40px</span>
+              <span class="badge badge-subtle">Saturate 1.8</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fluent -->
+        <div class="surface-card glass-fluent edge-top-highlight">
+          <span class="surface-label">polaris-glass-fluent</span>
+          <h3>Fluent Acrylic</h3>
+          <p>Windows 11-style milky acrylic. For navigation bars, toolbars, and sidebars.</p>
+          <div class="surface-meta">
+            <span class="badge badge-subtle">Blur 30px</span>
+            <span class="badge badge-subtle">Saturate 1.5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edge Lighting Demo -->
+      <h3 class="subsection-title">Edge Lighting</h3>
+      <div class="edge-demo-grid">
+        <div class="edge-demo-card glass-default edge-top-highlight">
+          <h4>Top Highlight</h4>
+          <p>Desktop default. Appears on hover — a bright specular line across the top edge.</p>
+        </div>
+        <div class="edge-demo-card glass-default edge-full-glow">
+          <h4>Full Border Glow</h4>
+          <p>Mobile & emphasis. Always-on warm orange halo around the entire card.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="section" id="components">
+    <div class="section-inner">
+      <span class="section-overline">Components</span>
+      <h2 class="section-title">UI Kit</h2>
+      <p class="section-desc">Pill-shaped interactive elements. Bold, modern, distinctive.</p>
+
+      <!-- Buttons -->
+      <h3 class="subsection-title">Buttons</h3>
+      <div class="component-row">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-gradient">Gradient CTA</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost</button>
+      </div>
+
+      <!-- Badges -->
+      <h3 class="subsection-title">Badges</h3>
+      <div class="component-row">
+        <span class="badge badge-filled">Filled</span>
+        <span class="badge badge-gradient">Gradient</span>
+        <span class="badge badge-outline">Outline</span>
+        <span class="badge badge-subtle">Subtle</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-error">Error</span>
+      </div>
+
+      <!-- Inputs -->
+      <h3 class="subsection-title">Inputs</h3>
+      <div class="input-row">
+        <input class="input" type="text" placeholder="Email address">
+        <input class="input" type="text" placeholder="Search..." value="Active input">
+      </div>
+
+      <!-- Card Composition -->
+      <h3 class="subsection-title">Card Composition</h3>
+      <div class="card-grid">
+        <div class="demo-card glass-default edge-top-highlight">
+          <div class="demo-card-header">
+            <span class="badge badge-gradient">Featured</span>
+            <span class="demo-card-date">May 2026</span>
+          </div>
+          <h3>Project Alpha</h3>
+          <p>A full-stack application built with the Gio design system. Glassmorphism at every layer.</p>
+          <div class="demo-card-footer">
+            <button class="btn btn-primary btn-sm">View Project</button>
+            <button class="btn btn-ghost btn-sm">Details</button>
+          </div>
+        </div>
+
+        <div class="demo-card glass-liquid">
+          <div class="glass-specular"></div>
+          <div class="glass-content">
+            <div class="demo-card-header">
+              <span class="badge badge-outline">In Progress</span>
+              <span class="demo-card-date">Apr 2026</span>
+            </div>
+            <h3>Neural Engine</h3>
+            <p>Audio processing pipeline with real-time visualizations and edge-lit control panels.</p>
+            <div class="demo-card-footer">
+              <button class="btn btn-primary btn-sm">View Project</button>
+              <button class="btn btn-ghost btn-sm">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card glass-fluent edge-full-glow">
+          <div class="demo-card-header">
+            <span class="badge badge-subtle">Concept</span>
+            <span class="demo-card-date">Mar 2026</span>
+          </div>
+          <h3>Dashboard X</h3>
+          <p>Data visualization dashboard with fluent acrylic panels and Dawn gradient charts.</p>
+          <div class="demo-card-footer">
+            <button class="btn btn-primary btn-sm">View Project</button>
+            <button class="btn btn-ghost btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer glass-fluent">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo">G</span>
+        <span>Gio Brand Design System v1.0</span>
+      </div>
+      <div class="footer-dawn-bar"></div>
+      <p class="footer-copy">Built with Blaze, Dawn, and Glass.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
