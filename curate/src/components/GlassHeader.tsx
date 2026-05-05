@@ -56,6 +56,7 @@ export function GlassHeader({ title, rightElement }: Props) {
     <BlurView
       intensity={fluentGlass.nativeBlurIntensity}
       tint={fluentGlass.nativeTint}
+      experimentalBlurMethod="dimezisBlurView"
       style={{
         position: "absolute",
         top: 0,

@@ -116,21 +116,6 @@ export default function TracksScreen() {
 
   return (
     <ScreenContainer>
-      <GlassHeader
-        title="Tracks"
-        rightElement={
-          <TouchableOpacity
-            onPress={() => router.push("/tracks/new")}
-            className="bg-brand-500 rounded-pill px-4 py-2"
-            activeOpacity={0.8}
-            style={btnNewStyle}
-          >
-            <Text className="text-white font-bold text-caption">
-              + New
-            </Text>
-          </TouchableOpacity>
-        }
-      />
       <ScrollView
         className="flex-1 px-5"
         contentContainerStyle={{ paddingBottom: 100, paddingTop: GLASS_HEADER_HEIGHT }}
@@ -217,6 +202,21 @@ export default function TracksScreen() {
           );
         })}
       </ScrollView>
+      <GlassHeader
+        title="Tracks"
+        rightElement={
+          <TouchableOpacity
+            onPress={() => router.push("/tracks/new")}
+            className="bg-brand-500 rounded-pill px-4 py-2"
+            activeOpacity={0.8}
+            style={btnNewStyle}
+          >
+            <Text className="text-white font-bold text-caption">
+              + New
+            </Text>
+          </TouchableOpacity>
+        }
+      />
     </ScreenContainer>
   );
 }

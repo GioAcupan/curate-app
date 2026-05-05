@@ -10,7 +10,7 @@ export const fluentGlass = {
   tint: "rgba(255,255,255,0.12)" as const,
   blur: 30,
   saturation: 1.5,
-  nativeBlurIntensity: 30,
+  nativeBlurIntensity: 50,
   nativeTint: "systemThinMaterialDark" as const,
   border: {
     web: {
