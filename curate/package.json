@@ -6,7 +6,8 @@
     "start": "set EXPO_NO_METRO_WORKSPACE=1 && expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "test": "jest"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.100.9",
@@ -25,7 +26,11 @@
     "zustand": "^5.0.13"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/react": "~19.1.0",
+    "jest": "^30.3.0",
+    "jest-expo": "^55.0.16",
+    "ts-jest": "^29.4.9",
     "typescript": "~5.9.2"
   },
   "private": true
