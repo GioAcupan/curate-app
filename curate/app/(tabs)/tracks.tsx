@@ -10,6 +10,7 @@ import { router } from "expo-router";
 import { useTracks } from "../../src/hooks/useTracks";
 import { ScreenContainer } from "../../src/components/ScreenContainer";
 import { GlassHeader, GLASS_HEADER_HEIGHT } from "../../src/components/GlassHeader";
+import { defaultGlass, webGlassStyle } from "../../src/lib/glass-styles";
 import type { Track, TrackStatus } from "../../src/types";
 
 const STATUS_LABELS: Record<TrackStatus, string> = {
@@ -41,22 +42,15 @@ const WEB = Platform.OS === "web";
 
 const glassCard: any = WEB
   ? {
-      backgroundColor: "rgba(255,255,255,0.08)",
-      backdropFilter: "blur(24px)",
-      WebkitBackdropFilter: "blur(24px)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.12)",
+      ...webGlassStyle(defaultGlass),
       borderRadius: 24,
       padding: 20,
       marginBottom: 12,
-      boxShadow:
-        "0 10px 25px -5px rgba(255,109,0,0.06), 0 8px 10px -6px rgba(0,0,0,0.1)",
       transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
     }
   : {
-      backgroundColor: "rgba(255,255,255,0.08)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.12)",
+      backgroundColor: defaultGlass.tint,
+      ...defaultGlass.border.native,
       borderRadius: 24,
       padding: 20,
       marginBottom: 12,
@@ -74,19 +68,14 @@ const glassCardActiveExtra: any = WEB
 
 const glassEmpty: any = WEB
   ? {
-      backgroundColor: "rgba(255,255,255,0.04)",
-      backdropFilter: "blur(24px)",
-      WebkitBackdropFilter: "blur(24px)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.08)",
+      ...webGlassStyle(defaultGlass),
       borderRadius: 24,
       padding: 48,
       alignItems: "center",
     }
   : {
-      backgroundColor: "rgba(255,255,255,0.04)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.08)",
+      backgroundColor: defaultGlass.tint,
+      ...defaultGlass.border.native,
       borderRadius: 24,
       padding: 48,
       alignItems: "center",

@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import { Platform } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { fluentGlass } from "../../src/lib/glass-styles";
 
 export default function TabLayout() {
   return (
@@ -31,13 +32,13 @@ export default function TabLayout() {
             width: '100%',
             maxWidth: 400,
             height: 72,
-            backgroundColor: 'rgba(255,255,255,0.12)',
-            backdropFilter: 'blur(30px) saturate(1.5)',
-            WebkitBackdropFilter: 'blur(30px) saturate(1.5)',
-            borderWidth: 1,
-            borderColor: 'rgba(255,255,255,0.15)',
+            backgroundColor: fluentGlass.tint,
+            backdropFilter: `blur(${fluentGlass.blur}px) saturate(${fluentGlass.saturation})`,
+            WebkitBackdropFilter: `blur(${fluentGlass.blur}px) saturate(${fluentGlass.saturation})`,
+            borderWidth: fluentGlass.border.web.borderWidth,
+            borderColor: fluentGlass.border.web.borderColor,
             borderRadius: 100,
-            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 16px -4px rgba(0,0,0,0.2)',
+            boxShadow: fluentGlass.shadow.web,
             paddingBottom: 0,
             borderTopWidth: 0,
             elevation: 0,
