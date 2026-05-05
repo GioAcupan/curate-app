@@ -9,6 +9,7 @@ import {
 import { router } from "expo-router";
 import { useTracks } from "../../src/hooks/useTracks";
 import { ScreenContainer } from "../../src/components/ScreenContainer";
+import { GlassHeader } from "../../src/components/GlassHeader";
 import type { Track, TrackStatus } from "../../src/types";
 
 const STATUS_LABELS: Record<TrackStatus, string> = {
@@ -126,13 +127,9 @@ export default function TracksScreen() {
 
   return (
     <ScreenContainer>
-      <ScrollView
-        className="flex-1 px-5 pt-12"
-        contentContainerStyle={{ paddingBottom: 100 }}
-      >
-        {/* Header */}
-        <View className="flex-row items-center justify-between mb-8">
-          <Text className="text-text-primary text-heading-md">Tracks</Text>
+      <GlassHeader
+        title="Tracks"
+        rightElement={
           <TouchableOpacity
             onPress={() => router.push("/tracks/new")}
             className="bg-brand-500 rounded-pill px-4 py-2"
@@ -143,8 +140,12 @@ export default function TracksScreen() {
               + New
             </Text>
           </TouchableOpacity>
-        </View>
-
+        }
+      />
+      <ScrollView
+        className="flex-1 px-5"
+        contentContainerStyle={{ paddingBottom: 100, paddingTop: 16 }}
+      >
         {/* Empty state */}
         {tracks && tracks.length === 0 && (
           <View style={glassEmpty}>
