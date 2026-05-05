@@ -85,8 +85,10 @@ export const liquidGlass = {
 };
 
 /* ── Helper: build web-only style props from a glass recipe ── */
+type GlassRecipe = typeof fluentGlass | typeof defaultGlass | typeof liquidGlass;
+
 export function webGlassStyle(
-  recipe: typeof fluentGlass,
+  recipe: GlassRecipe,
 ): ViewStyle {
   const filter = recipe.saturation
     ? `blur(${recipe.blur}px) saturate(${recipe.saturation})`
@@ -126,3 +128,78 @@ export const liquidGlassStyle: ViewStyle = Platform.select({
     ...liquidGlass.border.native,
   },
 });
+
+/* ── Shared glass input text field ───────────────────
+   Used in: NewTrackScreen, TrackDetailScreen */
+export const inputGlassStyle: ViewStyle = Platform.select({
+  web: {
+    backgroundColor: "rgba(255,255,255,0.06)",
+    backdropFilter: "blur(24px)",
+    WebkitBackdropFilter: "blur(24px)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    borderRadius: 100,
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+    color: "#F0EFF4",
+    fontSize: 16,
+    outline: "none",
+    transition: "border-color 0.15s, box-shadow 0.15s",
+  } as any,
+  default: {
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    borderRadius: 100,
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+    color: "#F0EFF4",
+    fontSize: 16,
+  } as any,
+});
+
+/* ── Glass chip base (pill shape, glass border) ─────
+   Used in: tag/topic picker chips */
+export const chipGlassStyle: ViewStyle = Platform.select({
+  web: {
+    borderRadius: 100,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderWidth: 1,
+    transition: "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+  } as any,
+  default: {
+    borderRadius: 100,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderWidth: 1,
+  } as any,
+});
+
+/* ── Segmented control container ─────────────────────
+   Glass background with flex row layout for status buttons.
+   Used in: TrackDetailScreen */
+export const segmentedControlStyle: ViewStyle = Platform.select({
+  web: {
+    flexDirection: "row",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    backdropFilter: "blur(24px)",
+    WebkitBackdropFilter: "blur(24px)",
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    padding: 4,
+  } as any,
+  default: {
+    flexDirection: "row",
+    backgroundColor: "rgba(255,255,255,0.08)",
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+    padding: 4,
+  } as any,
+});
+
+/* ── Brand glow shadow (matches .btn-primary) ────────
+   Used on: selected chips, status buttons, "New" track button */
+export const brandGlowShadow = "0 2px 10px -2px rgba(255,109,0,0.4)";

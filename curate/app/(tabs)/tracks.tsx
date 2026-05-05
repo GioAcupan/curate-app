@@ -10,7 +10,7 @@ import { router } from "expo-router";
 import { useTracks } from "../../src/hooks/useTracks";
 import { ScreenContainer } from "../../src/components/ScreenContainer";
 import { GlassHeader, GLASS_HEADER_HEIGHT } from "../../src/components/GlassHeader";
-import { defaultGlass, webGlassStyle } from "../../src/lib/glass-styles";
+import { defaultGlass, webGlassStyle, brandGlowShadow } from "../../src/lib/glass-styles";
 import type { Track, TrackStatus } from "../../src/types";
 
 const STATUS_LABELS: Record<TrackStatus, string> = {
@@ -82,7 +82,7 @@ const glassEmpty: any = WEB
     };
 
 const btnNewStyle: any = WEB
-  ? { boxShadow: "0 2px 10px -2px rgba(255,109,0,0.4)" }
+  ? { boxShadow: brandGlowShadow }
   : {};
 
 /* ── Component ──────────────────────────────────── */

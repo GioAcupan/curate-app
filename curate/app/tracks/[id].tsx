@@ -12,6 +12,7 @@ import {
 import { router, useLocalSearchParams } from "expo-router";
 import { useTrack, useUpdateTrack } from "../../src/hooks/useTracks";
 import { ScreenContainer } from "../../src/components/ScreenContainer";
+import { inputGlassStyle, segmentedControlStyle, brandGlowShadow } from "../../src/lib/glass-styles";
 import type { TrackStatus } from "../../src/types";
 
 const STATUS_OPTIONS: TrackStatus[] = ["active", "paused", "completed"];
@@ -27,55 +28,6 @@ const TOPIC_LABELS: Record<string, string> = {
   "software-engineering": "Software Eng",
   "theoretical-cs": "Theoretical CS",
 };
-
-/* ── Web glass styles ───────────────────────────── */
-const WEB = Platform.OS === "web";
-
-const inputStyle: any = WEB
-  ? {
-      backgroundColor: "rgba(255,255,255,0.06)",
-      backdropFilter: "blur(24px)",
-      WebkitBackdropFilter: "blur(24px)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.1)",
-      borderRadius: 100,
-      paddingHorizontal: 24,
-      paddingVertical: 16,
-      color: "#F0EFF4",
-      fontSize: 16,
-      outline: "none",
-      transition: "border-color 0.15s, box-shadow 0.15s",
-    }
-  : {
-      backgroundColor: "rgba(255,255,255,0.06)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.1)",
-      borderRadius: 100,
-      paddingHorizontal: 24,
-      paddingVertical: 16,
-      color: "#F0EFF4",
-      fontSize: 16,
-    };
-
-const segmentedContainer: any = WEB
-  ? {
-      flexDirection: "row",
-      backgroundColor: "rgba(255,255,255,0.08)",
-      backdropFilter: "blur(24px)",
-      WebkitBackdropFilter: "blur(24px)",
-      borderRadius: 100,
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.1)",
-      padding: 4,
-    }
-  : {
-      flexDirection: "row",
-      backgroundColor: "rgba(255,255,255,0.08)",
-      borderRadius: 100,
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.1)",
-      padding: 4,
-    };
 
 export default function TrackDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -169,7 +121,7 @@ export default function TrackDetailScreen() {
             onBlur={handleNameBlur}
             placeholder="Track name"
             placeholderTextColor="rgba(240,239,244,0.35)"
-            style={inputStyle}
+            style={inputGlassStyle}
             returnKeyType="done"
           />
           <View className="mb-8" />
@@ -192,7 +144,7 @@ export default function TrackDetailScreen() {
           <Text className="text-text-secondary text-overline uppercase mb-3">
             Status
           </Text>
-          <View style={segmentedContainer}>
+          <View style={segmentedControlStyle}>
             {STATUS_OPTIONS.map((status) => {
               const isCurrent = track.status === status;
               const isPending =
@@ -211,8 +163,8 @@ export default function TrackDetailScreen() {
                     paddingVertical: 12,
                     alignItems: "center",
                     backgroundColor: isCurrent ? "#FF6D00" : "transparent",
-                    ...(WEB && isCurrent
-                      ? { boxShadow: "0 2px 10px -2px rgba(255,109,0,0.4)" }
+                    ...(Platform.OS === "web" && isCurrent
+                      ? { boxShadow: brandGlowShadow }
                       : {}),
                   } as any}
                   activeOpacity={0.7}

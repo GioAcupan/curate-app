@@ -12,6 +12,7 @@ import {
 import { router } from "expo-router";
 import { useCreateTrack } from "../../src/hooks/useTracks";
 import { ScreenContainer } from "../../src/components/ScreenContainer";
+import { inputGlassStyle, chipGlassStyle, brandGlowShadow } from "../../src/lib/glass-styles";
 import type { Tag, Topic } from "../../src/types";
 
 const TAGS: { value: Tag; label: string }[] = [
@@ -26,45 +27,6 @@ const TOPICS: { value: Topic; label: string }[] = [
   { value: "software-engineering", label: "Software Eng" },
   { value: "theoretical-cs", label: "Theoretical CS" },
 ];
-
-/* ── Web glass styles ───────────────────────────── */
-const WEB = Platform.OS === "web";
-
-const inputStyle: any = WEB
-  ? {
-      backgroundColor: "rgba(255,255,255,0.06)",
-      backdropFilter: "blur(24px)",
-      WebkitBackdropFilter: "blur(24px)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.1)",
-      borderRadius: 100,
-      paddingHorizontal: 24,
-      paddingVertical: 16,
-      color: "#F0EFF4",
-      fontSize: 16,
-      outline: "none",
-      transition: "border-color 0.15s, box-shadow 0.15s",
-    }
-  : {
-      backgroundColor: "rgba(255,255,255,0.06)",
-      borderWidth: 1,
-      borderColor: "rgba(255,255,255,0.1)",
-      borderRadius: 100,
-      paddingHorizontal: 24,
-      paddingVertical: 16,
-      color: "#F0EFF4",
-      fontSize: 16,
-    };
-
-const chipBase: any = WEB
-  ? {
-      borderRadius: 100,
-      paddingHorizontal: 16,
-      paddingVertical: 10,
-      borderWidth: 1,
-      transition: "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
-    }
-  : { borderRadius: 100, paddingHorizontal: 16, paddingVertical: 10, borderWidth: 1 };
 
 export default function NewTrackScreen() {
   const [name, setName] = useState("");
@@ -134,7 +96,7 @@ export default function NewTrackScreen() {
             onChangeText={setName}
             placeholder="e.g. Linear Algebra mastery"
             placeholderTextColor="rgba(240,239,244,0.35)"
-            style={inputStyle}
+            style={inputGlassStyle}
             autoFocus
             returnKeyType="done"
           />
@@ -155,15 +117,15 @@ export default function NewTrackScreen() {
                     if (t.value !== "shadow") setTopic(null);
                   }}
                   style={{
-                    ...chipBase,
+                    ...chipGlassStyle,
                     backgroundColor: selected
                       ? "#FF6D00"
                       : "rgba(255,255,255,0.08)",
                     borderColor: selected
                       ? "#FF6D00"
                       : "rgba(255,255,255,0.1)",
-                    ...(WEB && selected
-                      ? { boxShadow: "0 2px 10px -2px rgba(255,109,0,0.4)" }
+                    ...(Platform.OS === "web" && selected
+                      ? { boxShadow: brandGlowShadow }
                       : {}),
                   }}
                   activeOpacity={0.7}
@@ -194,15 +156,15 @@ export default function NewTrackScreen() {
                       key={t.value}
                       onPress={() => setTopic(t.value)}
                       style={{
-                        ...chipBase,
+                        ...chipGlassStyle,
                         backgroundColor: selected
                           ? "#FF6D00"
                           : "rgba(255,255,255,0.08)",
                         borderColor: selected
                           ? "#FF6D00"
                           : "rgba(255,255,255,0.1)",
-                        ...(WEB && selected
-                          ? { boxShadow: "0 2px 10px -2px rgba(255,109,0,0.4)" }
+                        ...(Platform.OS === "web" && selected
+                          ? { boxShadow: brandGlowShadow }
                           : {}),
                       }}
                       activeOpacity={0.7}
